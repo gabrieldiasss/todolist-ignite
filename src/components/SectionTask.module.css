@@ -17,6 +17,6 @@
     color: #000;
 }
 
-/* .header > span {
+.header > span {
     color: var(--purple);
-} */
+}

@@ -10,11 +10,12 @@ export function Card({ text }: CardProps) {
     return (
         <article className={styles.card} >
             <div className={styles.content}>
-                <div className={styles.custom_checkbox} >
-                    <input type="radio" name="" id="" />
-                    <label>{text}</label>
+                <div className={styles.custom_radio} >
+                    <input type="checkbox" name="checkboxTask" id="checkboxTask" />
+                    <label htmlFor="checkboxTask">{text}</label>
                 </div>
-                <Trash size={20} />
+
+                <Trash className={styles.svg} size={24} />
             </div>
         </article>
     )
