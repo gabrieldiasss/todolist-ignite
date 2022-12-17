@@ -22,8 +22,10 @@ export function SectionTask() {
 
     return (
         <div>
-            <header className={styles.header} >
-                <span>Tarefas criadas</span>
+            <header className={styles.header}>
+                <span>
+                    Tarefas criadas
+                </span>
 
                 <span>Concluídas</span>
             </header>
