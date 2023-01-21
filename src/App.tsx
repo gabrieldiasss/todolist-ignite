@@ -1,22 +1,18 @@
 import { Header } from './components/Header'
-import { CreateTask } from './components/CreateTask'
 import './global.css'
 import { SectionTask } from './components/SectionTask'
-import styles from './App.module.css'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function App() {
 
   return (
     <>
+      <ToastContainer />
+
       <Header />
 
-      <div className={styles.wrapper} >
-        <CreateTask />
-
-        <SectionTask />
-      </div>
-
-
+      <SectionTask />
     </>
   )
 }

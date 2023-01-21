@@ -4,7 +4,7 @@
     border-radius: 8px;
 }
 
-.card + .card {
+.card+.card {
     margin-top: 1rem;
 }
 
@@ -16,37 +16,6 @@
     height: 4.5rem;
 }
 
-.custom_radio input {
-    display: none;
-}
-
-label {
-    color: var(--gray-100);
-}
-
-.custom_radio input + label:before {
-    content: '';
-    width: 18px;
-    height: 18px;
-    border-radius: 4px;
-    background-color: transparent;
-    border: 2px solid var(--blue);
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 8px;
-    margin-bottom: 3px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.custom_radio input:checked + label:before {
-    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
-    background-color: var(--purple);
-    background-position: center;
-    border: none;
-    padding: 2px;
-}   
-
 .svg {
     color: var(--gray-300);
     cursor: pointer;
@@ -57,3 +26,31 @@ label {
     opacity: 0.9;
 }
 
+/* DIVISÃO */
+
+.custom_checkbox input{
+    display: none;
+}
+
+.custom_checkbox label {
+    color: var(--gray-100);
+}
+
+.custom_checkbox input + label:before {
+    content: '';
+    width: 17.45px;
+    height: 17.45px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid var(--blue);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-bottom: 3px;
+}
+
+.custom_checkbox input:checked + label:before {
+    background-color: var(--purple-dark);
+    border: 2px solid var(--purple-dark);
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
+}
