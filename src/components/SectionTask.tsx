@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import { Card } from './Card'
 import styles from './SectionTask.module.css'
 import { PlusCircle } from "phosphor-react";
@@ -7,24 +7,27 @@ import { toast } from 'react-toastify';
 
 interface Tasks {
     id: string | undefined;
-    task: string;
-    isComplete: boolean;
+    message: string;
+    isComplete: boolean
 }
 
 export function SectionTask() {
 
     const [newTaskText, setNewTask] = useState("")
-    const [isComplete, setIsComplete] = useState(false)
+    const [check, setCheck] = useState<boolean>(false)
 
     const [tasks, setTasks] = useState<Tasks[]>([])
 
-    function handleCreateNewTask() {
+    const newTask: Tasks = {
+        id: uuidv4(),
+        message: newTaskText,
+        isComplete: false
+    }
 
-        const newTask: Tasks = {
-            id: uuidv4(),
-            task: newTaskText,
-            isComplete,
-        }
+    const tasksCompletedNumber = tasks.filter(task => task.isComplete === true).length
+
+
+    function handleCreateNewTask() {
 
         if (newTaskText === "") {
             toast.error("Campo vázio")
@@ -37,7 +40,18 @@ export function SectionTask() {
     }
 
     function handleCompleteTask(id: string) {
-        alert(id)
+        const newTasks = tasks.map(task => {
+            if(task.id === id) {
+                return {
+                    ...task,
+                    isComplete: !task.isComplete
+                }
+            }
+
+            return task
+        })
+
+        setTasks(newTasks)
     }
 
     function handleDeleteTask(id: string) {
@@ -55,11 +69,13 @@ export function SectionTask() {
 
             <div>
                 <header className={styles.header}>
-                    <span>
-                        Tarefas criadas
-                    </span>
-
-                    <span>Concluídas</span>
+                    <strong>
+                        Tarefas criadas <span>{tasks.length}</span>
+                    </strong>
+                    
+                    <strong>
+                        Concluídas <span>{tasksCompletedNumber} de {tasks.length}</span>
+                    </strong>
                 </header>
 
                 <main>

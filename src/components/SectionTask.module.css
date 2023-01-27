@@ -13,13 +13,11 @@
     margin-bottom: 2rem;
 }
 
-.header span {
+.header strong {
     color: var(--blue);
-    font-weight: bold;
 }
 
-.header span::after {
-    content: '44';
+.header span{
     padding: 5px;
     margin-left: 5px;
     background-color: var(--gray-400);
@@ -29,9 +27,10 @@
     border-radius: 50%;
 }
 
-.header span:last-child{
+.header strong:last-child {
     color: var(--purple);
 }
+
 .sectionCreateTask {
     margin: -2rem auto;
 
